@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore holistic services offered by Yaw Tutu – Tantric Thai massage, Reiki energy healing, Microcurrent Point Stimulation and roXiva 5D therapy." />
+    <title>Services – Yaw Tutu</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container nav-container">
+        <a href="index.html" class="logo">Yaw Tutu</a>
+        <nav>
+          <div class="nav-toggle" aria-label="Toggle navigation" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html" class="active">Services</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section-light">
+      <div class="container">
+        <h1>Our Services</h1>
+        <p>
+          Every session is tailored to your needs. Below you’ll find an overview
+          of the modalities available. Click on a service to learn more about
+          session structure, pricing and what to expect.
+        </p>
+        <div class="services-grid">
+          <div class="service-card">
+            <img src="hero.avif" alt="Hands performing Thai massage on a client" />
+            <div class="service-card-content">
+              <h3>Tantric Thai Massage</h3>
+              <ul>
+                <li>Mindful, spiritual touch</li>
+                <li>Combines Thai techniques with ancestral influences</li>
+                <li>For physical release &amp; energetic balance</li>
+              </ul>
+              <a href="tantric-thai-massage.html" class="btn">View details</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="reiki.jpg" alt="Candles and healing hands for Reiki" />
+            <div class="service-card-content">
+              <h3>Reiki Energy Healing</h3>
+              <ul>
+                <li>Hands‑off energy transmission</li>
+                <li>Releases blockages &amp; restores flow</li>
+                <li>Promotes deep relaxation</li>
+              </ul>
+              <a href="reiki-energy-healing.html" class="btn">View details</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="mps.jpg" alt="Microcurrent therapy device on wood" />
+            <div class="service-card-content">
+              <h3>Microcurrent Point Stimulation</h3>
+              <ul>
+                <li>Gentle electrical currents</li>
+                <li>Addresses pain &amp; scar tissue</li>
+                <li>Enhances natural healing</li>
+              </ul>
+              <a href="microcurrent-point-stimulation.html" class="btn">View details</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <img src="roxiva.png" alt="Abstract waves and light therapy" />
+            <div class="service-card-content">
+              <h3>roXiva 5D Therapy</h3>
+              <ul>
+                <li>Immersive sound &amp; light</li>
+                <li>Guided meditative states</li>
+                <li>Supports mental clarity</li>
+              </ul>
+              <a href="roxiva-5d-therapy.html" class="btn">View details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <h3>Contact</h3>
+          <p>Phone: <a href="tel:+13522222577">(352) 222‑2577</a></p>
+          <p>Email: <a href="mailto:shanticor@me.com">shanticor@me.com</a></p>
+          <p>Locations: Providence RI • Gainesville FL • New York NY • Smithfield RI • Lincoln MA</p>
+        </div>
+        <div>
+          <h3>Quick links</h3>
+          <p><a href="about.html">About</a></p>
+          <p><a href="index.html">Services</a></p>
+          <p><a href="events.html">Events</a></p>
+          <p><a href="blog.html">Blog</a></p>
+        </div>
+        <div>
+          <h3>Stay connected</h3>
+          <p>
+            Subscribe to our newsletter to receive updates on events,
+            workshops and special offers.
+          </p>
+          <form class="subscribe-form" action="https://formsubmit.co/shanticor@me.com" method="POST">
+            <input type="email" name="email" placeholder="Your email address" required />
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 2rem; font-size: 0.8rem; text-align: center;">
+        &copy; <span id="year-serv"></span> Yaw Tutu. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      document.getElementById('year-serv').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

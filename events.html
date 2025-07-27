@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stay up to date with upcoming workshops, retreats and healing events hosted by Yaw Tutu in Providence, Florida and New York."
+    />
+    <meta
+      name="keywords"
+      content="healing events Providence RI, tantra workshops Florida, energy healing retreat New York, Yaw Tutu events"
+    />
+    <title>Upcoming Events – Yaw Tutu</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container nav-container">
+        <a href="index.html" class="logo">Yaw Tutu</a>
+        <nav>
+          <div
+            class="nav-toggle"
+            aria-label="Toggle navigation"
+            role="button"
+            tabindex="0"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="events.html" class="active">Events</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Events Hero -->
+    <section class="hero" style="background-image: url('hero.avif');">
+      <div class="container hero-content">
+        <h1>Upcoming Events &amp; Workshops</h1>
+        <p>
+          Join Yaw for immersive experiences that blend movement, energy work,
+          community and celebration.
+        </p>
+      </div>
+    </section>
+
+    <!-- Events List -->
+    <section class="section-light">
+      <div class="container">
+        <h2>2025 Event Calendar</h2>
+        <div class="events-grid">
+          <!-- Event 1 -->
+          <article class="event">
+            <h3>Tantric Breathwork Workshop</h3>
+            <p class="event-meta"><strong>Date:</strong> September 21, 2025 • <strong>Location:</strong> Providence, RI</p>
+            <p>
+              A one‑day intensive exploring conscious breath, gentle movement
+              and partner exercises to awaken your inner vitality. Suitable for
+              all levels, this workshop invites deep connection with
+              yourself and others.
+            </p>
+            <a href="contact.html" class="btn">Register Now</a>
+          </article>
+          <!-- Event 2 -->
+          <article class="event">
+            <h3>Healing Retreat in Gainesville</h3>
+            <p class="event-meta"><strong>Date:</strong> October 12–14, 2025 • <strong>Location:</strong> Gainesville, FL</p>
+            <p>
+              Escape to Florida for a weekend of restorative practices
+              including Tantric Thai massage, Qigong and energy healing. Enjoy
+              nourishing meals, group ceremonies and plenty of time for
+              reflection in nature.
+            </p>
+            <a href="contact.html" class="btn">Reserve Your Spot</a>
+          </article>
+          <!-- Event 3 -->
+          <article class="event">
+            <h3>Ritual &amp; Movement Festival</h3>
+            <p class="event-meta"><strong>Date:</strong> November 5, 2025 • <strong>Location:</strong> New York, NY</p>
+            <p>
+              A vibrant gathering celebrating dance, music, ecstatic
+              expression and healing arts. Experience Yaw’s signature roXiva
+              5D sessions alongside live percussion, ecstatic dance and
+              community rituals.
+            </p>
+            <a href="contact.html" class="btn">Learn More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Sign‑Up -->
+    <section class="section-dark">
+      <div class="container" style="text-align: center;">
+        <h2 style="color: #fff; margin-bottom: 1rem;">Stay in the loop</h2>
+        <p style="color: #ddd; margin-bottom: 1.5rem;">
+          Be the first to hear about upcoming events, retreats and special
+          offerings.
+        </p>
+        <form
+          class="subscribe-form"
+          action="https://formsubmit.co/shanticor@me.com"
+          method="POST"
+          style="max-width: 480px; margin: 0 auto;"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email address"
+            required
+          />
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <h3>Contact</h3>
+          <p>Phone: <a href="tel:+13522222577">(352) 222‑2577</a></p>
+          <p>Email: <a href="mailto:shanticor@me.com">shanticor@me.com</a></p>
+          <p>
+            Locations: Providence RI • Gainesville FL • New York NY • Smithfield
+            RI • Lincoln MA
+          </p>
+        </div>
+        <div>
+          <h3>Quick links</h3>
+          <p><a href="about.html">About</a></p>
+          <p><a href="services.html">Services</a></p>
+          <p><a href="events.html">Events</a></p>
+          <p><a href="blog.html">Blog</a></p>
+        </div>
+        <div>
+          <h3>Stay connected</h3>
+          <p>
+            Subscribe to our newsletter to receive updates on events,
+            workshops and special offers.
+          </p>
+          <form
+            class="subscribe-form"
+            action="https://formsubmit.co/shanticor@me.com"
+            method="POST"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email address"
+              required
+            />
+            <button type="submit" class="btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div
+        class="container"
+        style="margin-top: 2rem; font-size: 0.8rem; text-align: center;"
+      >
+        &copy; <span id="currentYear"></span> Yaw Tutu. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      // Update footer year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>

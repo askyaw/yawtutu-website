@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 
 const siteConfig = {
-  name: 'Yaw Tutu',
-  title: 'Yaw Tutu — Tantra, Embodiment & Conscious Intimacy',
+  name: 'Y & E Retreats',
+  title: 'Y & E Retreats — Tantra, Embodiment & Conscious Intimacy',
   description:
-    'Transformational workshops and retreats in tantra foundations, conscious intimacy education, and private VIP couple experiences in coastal Maine. Led by Yaw Tutu.',
+    'Transformational workshops and retreats in tantra foundations, conscious intimacy education, and private VIP couple experiences in coastal Maine.',
   url: 'https://yawtutu.com',
   ogImage: '/images/og-default.jpg',
   twitterHandle: '@yawtutu',
@@ -26,9 +26,7 @@ export function buildMetadata({
   image?: string;
   noIndex?: boolean;
 }): Metadata {
-  const metaTitle = title
-    ? `${title} | ${siteConfig.name}`
-    : siteConfig.title;
+  const metaTitle = title ? `${title} | ${siteConfig.name}` : siteConfig.title;
   const metaDescription = description ?? siteConfig.description;
   const metaUrl = `${siteConfig.url}${path}`;
   const metaImage = image ?? siteConfig.ogImage;

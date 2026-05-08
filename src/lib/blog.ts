@@ -1,10 +1,9 @@
 import type { BlogPost } from '@/types';
 
-// Placeholder posts — replace with real MDX files in src/content/blog/
 const placeholderPosts: BlogPost[] = [
   {
     slug: 'what-is-tantra',
-    title: 'What Tantra Actually Is (And What It Isn\'t)',
+    title: "What Tantra Actually Is (And What It Isn't)",
     excerpt: 'Beyond the misconceptions, tantra is one of the most sophisticated maps of human consciousness and connection ever developed. Here is where to start.',
     date: 'May 2025',
     category: 'Tantra',
@@ -29,12 +28,7 @@ const placeholderPosts: BlogPost[] = [
 ];
 
 export async function getAllPosts(): Promise<BlogPost[]> {
-  // In production: read from filesystem or CMS
-  // For now returns placeholder data to avoid build errors
-  return placeholderPosts.map((p) => ({
-    ...p,
-    date: p.date,
-  }));
+  return placeholderPosts.map((p) => ({ ...p }));
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {

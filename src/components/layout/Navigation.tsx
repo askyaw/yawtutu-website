@@ -27,9 +27,7 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
@@ -42,101 +40,67 @@ export function Navigation() {
 
   return (
     <>
-      <header
-        className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-          navBg
-        )}
-      >
+      <header className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-500', navBg)}>
         <nav className="container-editorial flex items-center justify-between h-18 md:h-20">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="font-display text-xl md:text-2xl text-ivory tracking-wide hover:text-gold transition-colors duration-300"
-          >
-            Yaw Tutu
+          <Link href="/" className="font-display text-xl md:text-2xl text-ivory tracking-wide hover:text-gold transition-colors duration-300">
+            Y &amp; E Retreats
           </Link>
-
-          {/* Desktop nav */}
           <ul className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={cn(
-                    'text-xs uppercase tracking-[0.15em] font-medium transition-colors duration-300 link-underline',
-                    pathname === item.href
-                      ? 'text-gold'
-                      : 'text-ivory/80 hover:text-ivory'
-                  )}
-                >
+                <Link href={item.href} className={cn(
+                  'text-xs uppercase tracking-[0.15em] font-medium transition-colors duration-300 link-underline',
+                  pathname === item.href ? 'text-gold' : 'text-ivory/80 hover:text-ivory'
+                )}>
                   {item.label}
                 </Link>
               </li>
             ))}
           </ul>
-
-          {/* Desktop CTA */}
-          <Link
-            href="/contact"
-            className="hidden lg:inline-flex btn-primary text-xs"
-          >
-            Inquire
-          </Link>
-
-          {/* Mobile hamburger */}
+          <Link href="/contact" className="hidden lg:inline-flex btn-primary text-xs">Inquire</Link>
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden text-ivory p-2 hover:text-gold transition-colors"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            onClick={() => setMenuOpen(true)}
+            className={cn('lg:hidden text-ivory p-2 hover:text-gold transition-colors', menuOpen && 'invisible')}
+            aria-label="Open menu"
             aria-expanded={menuOpen}
           >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
+            <Menu size={22} />
           </button>
         </nav>
       </header>
 
-      {/* Mobile overlay */}
       <div
         className={cn(
-          'fixed inset-0 z-40 bg-charcoal-800/98 flex flex-col justify-center px-8 transition-all duration-500',
+          'fixed inset-0 z-[60] bg-charcoal-900 flex flex-col transition-all duration-300',
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         )}
+        aria-hidden={!menuOpen}
       >
-        <nav aria-label="Mobile navigation">
-          <ul className="flex flex-col gap-6">
+        <div className="flex items-center justify-between px-6 h-18 md:h-20 border-b border-white/10 flex-shrink-0">
+          <Link href="/" className="font-display text-xl text-ivory tracking-wide" onClick={() => setMenuOpen(false)}>
+            Y &amp; E Retreats
+          </Link>
+          <button onClick={() => setMenuOpen(false)} className="text-ivory/70 hover:text-gold transition-colors p-2" aria-label="Close menu">
+            <X size={22} />
+          </button>
+        </div>
+        <nav aria-label="Mobile navigation" className="flex-1 flex flex-col justify-center px-8">
+          <ul className="flex flex-col gap-1">
             {navItems.map((item, i) => (
-              <li
-                key={item.href}
-                style={{ transitionDelay: menuOpen ? `${i * 60}ms` : '0ms' }}
-                className={cn(
-                  'transition-all duration-400',
-                  menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                )}
-              >
-                <Link
-                  href={item.href}
-                  className={cn(
-                    'heading-md block transition-colors duration-300',
-                    pathname === item.href ? 'text-gold' : 'text-ivory hover:text-gold'
-                  )}
-                >
+              <li key={item.href} style={{ transitionDelay: menuOpen ? `${80 + i * 50}ms` : '0ms' }}
+                className={cn('transition-all duration-300', menuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4')}>
+                <Link href={item.href}
+                  className={cn('block py-4 border-b border-white/8 font-display text-2xl font-light transition-colors duration-200', pathname === item.href ? 'text-gold' : 'text-ivory hover:text-gold')}
+                  onClick={() => setMenuOpen(false)}>
                   {item.label}
                 </Link>
               </li>
             ))}
-            <li
-              style={{ transitionDelay: menuOpen ? `${navItems.length * 60}ms` : '0ms' }}
-              className={cn(
-                'pt-4 transition-all duration-400',
-                menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              )}
-            >
-              <Link href="/contact" className="btn-primary w-full justify-center">
-                Inquire Now
-              </Link>
-            </li>
           </ul>
+          <div style={{ transitionDelay: menuOpen ? `${80 + navItems.length * 50}ms` : '0ms' }}
+            className={cn('mt-10 transition-all duration-300', menuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4')}>
+            <Link href="/contact" className="btn-primary w-full justify-center" onClick={() => setMenuOpen(false)}>Inquire Now</Link>
+          </div>
         </nav>
       </div>
     </>

@@ -1,5 +1,5 @@
 /*
- * Custom stylesheet for Yaw Tutu’s healing arts website.
+ * Custom stylesheet for Yaw Tutu's healing arts website.
  * Inspired by the modern, sensual aesthetic of Ella Rose Tantra Wellness
  * with a color palette of deep plum, rose gold and earthy neutrals.
  */
@@ -127,7 +127,7 @@ header {
 /* Hero Section */
 .hero {
   height: 100vh;
-  background-image: url('assets/hero.png');
+  background-image: url('hero.png');
   background-size: cover;
   background-position: center;
   position: relative;
